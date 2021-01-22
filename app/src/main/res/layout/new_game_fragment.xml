@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewGameFragment">
+
+    <TextView
+        android:id="@+id/tvGo"
+        style="@style/DefaultButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/go_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfTeam1"
+        style="@style/DefaultInputText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:hint="@string/team1_hint"
+        app:counterEnabled="true"
+        app:counterMaxLength="12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTeam1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfTeam2"
+        style="@style/DefaultInputText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:hint="@string/team2_hint"
+        app:counterEnabled="true"
+        app:counterMaxLength="12"
+        app:layout_constraintStart_toStartOf="@id/tfTeam1"
+        app:layout_constraintTop_toBottomOf="@id/tfTeam1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTeam2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvSetTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:drawableStartCompat="@drawable/ic_stopwatch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfTeam2"
+        tools:text="00:00" />
+
+    <ImageButton
+        android:id="@+id/ibLeaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0000"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_trophy"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvGo"
+        app:layout_constraintTop_toTopOf="@+id/tvGo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

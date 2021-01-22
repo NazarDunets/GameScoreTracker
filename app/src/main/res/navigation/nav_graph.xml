@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newGameFragment">
+
+    <fragment
+        android:id="@+id/newGameFragment"
+        android:name="com.example.gamescoretracker.NewGameFragment"
+        android:label="@string/new_game_label"
+        tools:layout="@layout/new_game_fragment">
+        <action
+            android:id="@+id/action_newGameFragment_to_currentGameFragment"
+            app:destination="@id/currentGameFragment" />
+        <action
+            android:id="@+id/action_newGameFragment_to_leaderboardFragment"
+            app:destination="@id/leaderboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentGameFragment"
+        android:name="com.example.gamescoretracker.CurrentGameFragment"
+        android:label="@string/current_game_label"
+        tools:layout="@layout/current_game_fragment">
+        <action
+            android:id="@+id/action_currentGameFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.example.gamescoretracker.ResultsFragment"
+        android:label="@string/results_label"
+        tools:layout="@layout/results_fragment">
+        <action
+            android:id="@+id/action_resultsFragment_to_leaderboardFragment"
+            app:destination="@id/leaderboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="com.example.gamescoretracker.LeaderboardFragment"
+        android:label="@string/leaderboard_label"
+        tools:layout="@layout/leaderboard_fragment" />
+</navigation>

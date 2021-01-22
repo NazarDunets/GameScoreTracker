@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">GameScoreTracker</string>
+
+    <string name="new_game_label">New Game</string>
+    <string name="current_game_label">Current Game</string>
+    <string name="results_label">Results</string>
+    <string name="leaderboard_label">Leaderboard</string>
+
+    <string name="go_button">Go!</string>
+    <string name="team1_hint">Team 1</string>
+    <string name="team2_hint">Team 2</string>
+    <string name="timer_text">%s:%s</string>
+    <string name="error_empty">This field cannot be empty</string>
+    <string name="error_time">Set the game duration</string>
+
+    <string name="score_board">%d : %d</string>
+    <string name="cancel">Cancel</string>
+    <string name="finish">Finish</string>
+    <string name="increase">+</string>
+
+    <string name="winner">Winner</string>
+    <string name="draw">Draw</string>
+    <string name="leaderboard_button">Leaderboard</string>
+
+    <string name="new_game">New Game</string>
+
+    <string name="time_separator">:</string>
+    <string name="bs_positive">OK</string>
+    <string name="time_picker_title">Set game duration</string>
+    <string name="min_label">Min</string>
+    <string name="sec_label">Sec</string>
+
+    <string name="share_title">Share game results</string>
+    <string name="share_text">Share</string>
+    <string name="share_msg">%s vs %s - %d:%d</string>
+
+</resources>
