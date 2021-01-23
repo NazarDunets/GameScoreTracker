@@ -23,6 +23,8 @@ class LeaderboardFragment : Fragment() {
 
     private lateinit var leaderboardAdapter: LeaderboardAdapter
 
+    private var isSorted = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -85,7 +87,13 @@ class LeaderboardFragment : Fragment() {
     }
 
     private fun changeSorting() {
-        leaderboardAdapter.changeSorting()
+        if (isSorted) {
+            leaderboardAdapter.updateItems(sharedViewModel.winners)
+        } else {
+            val sortedByScore = sharedViewModel.winners.sortedByDescending {it.score}
+            leaderboardAdapter.updateItems(sortedByScore)
+        }
+        isSorted = !isSorted
     }
 
     private fun goToNewGame() {

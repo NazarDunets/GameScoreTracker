@@ -3,24 +3,25 @@ package com.example.gamescoretracker
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gamescoretracker.databinding.WinnerItemBinding
 import com.example.gamescoretracker.model.Winner
+import com.example.gamescoretracker.utils.WinnersDiffCallback
 
 class LeaderboardAdapter : RecyclerView.Adapter<WinnerViewHolder>() {
 
     private var items: List<Winner> = emptyList()
-    private lateinit var alternativeSorting: List<Winner>
 
-    fun setItems(i: List<Winner>) {
-        items = i
-        alternativeSorting = items.sortedByDescending { w -> w.score }
+    fun setItems(newItems: List<Winner>) {
+        items = newItems
         notifyDataSetChanged()
     }
 
-    fun changeSorting() {
-        items = alternativeSorting.also { alternativeSorting = items }
-        notifyDataSetChanged()
+    fun updateItems(newItems: List<Winner>) {
+        val diffResult = DiffUtil.calculateDiff(WinnersDiffCallback(items, newItems))
+        items = newItems
+        diffResult.dispatchUpdatesTo(this)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WinnerViewHolder {
@@ -39,11 +40,10 @@ class LeaderboardAdapter : RecyclerView.Adapter<WinnerViewHolder>() {
 
 class WinnerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    private val tvWinnerName = itemView.findViewById<TextView>(R.id.tvWinnerName)
-    private val tvWinnerScore = itemView.findViewById<TextView>(R.id.tvWinnerScore)
+    private val binding = WinnerItemBinding.bind(itemView)
 
     fun bind(winner: Winner) {
-        tvWinnerName.text = winner.name
-        tvWinnerScore.text = winner.score.toString()
+        binding.tvWinnerName.text = winner.name
+        binding.tvWinnerScore.text = winner.score.toString()
     }
 }
