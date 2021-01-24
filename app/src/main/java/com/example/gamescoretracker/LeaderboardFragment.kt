@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gamescoretracker.databinding.LeaderboardFragmentBinding
 import com.example.gamescoretracker.model.GamesViewModel
+import com.example.gamescoretracker.model.Winner
+
+private const val SORTING_TAG = "SORTING_TAG"
 
 class LeaderboardFragment : Fragment() {
 
@@ -31,6 +34,9 @@ class LeaderboardFragment : Fragment() {
         activity?.onBackPressedDispatcher?.addCallback(this) {
             goToNewGame()
         }
+        savedInstanceState?.let {
+            isSorted = it.getBoolean(SORTING_TAG)
+        }
     }
 
     override fun onCreateView(
@@ -46,6 +52,11 @@ class LeaderboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecycler()
         setListeners()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(SORTING_TAG, isSorted)
     }
 
     override fun onDestroyView() {
@@ -67,7 +78,7 @@ class LeaderboardFragment : Fragment() {
 
     private fun setupRecycler() {
         leaderboardAdapter = LeaderboardAdapter().apply {
-            setItems(sharedViewModel.winners)
+            setItems(getCurrentSortingList())
         }
 
         binding.rvWinners.apply {
@@ -87,13 +98,15 @@ class LeaderboardFragment : Fragment() {
     }
 
     private fun changeSorting() {
-        if (isSorted) {
-            leaderboardAdapter.updateItems(sharedViewModel.winners)
-        } else {
-            val sortedByScore = sharedViewModel.winners.sortedByDescending {it.score}
-            leaderboardAdapter.updateItems(sortedByScore)
-        }
         isSorted = !isSorted
+        leaderboardAdapter.updateItems(getCurrentSortingList())
+    }
+
+    private fun getCurrentSortingList(): List<Winner> {
+        return if (isSorted)
+            sharedViewModel.winners.sortedByDescending { w -> w.score }
+        else
+            sharedViewModel.winners
     }
 
     private fun goToNewGame() {
