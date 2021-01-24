@@ -109,8 +109,8 @@ class CurrentGameFragment : Fragment() {
         binding.tvScoreBoard.text =
             getString(
                 R.string.score_board,
-                t2Score,
-                t1Score
+                t1Score,
+                t2Score
             )
     }
 
