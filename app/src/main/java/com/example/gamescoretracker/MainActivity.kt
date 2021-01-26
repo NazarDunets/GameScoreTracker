@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         setSupportActionBar(findViewById(R.id.abCustom))
 
+        // Remove "Up" button from the AppBar
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.newGameFragment,
