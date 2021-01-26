@@ -48,14 +48,31 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="DefaultInputText" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="DefaultInputTextLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextColor">@color/black</item>
         <item name="boxStrokeColor">@color/black</item>
         <item name="boxStrokeWidthFocused">1dp</item>
     </style>
 
+    <style name="TimeEditText">
+        <item name="android:ems">3</item>
+        <item name="android:maxLength">2</item>
+        <item name="android:maxLines">1</item>
+        <item name="singleLine">true</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="TeamEditText">
+        <item name="android:ems">12</item>
+        <item name="android:maxLength">12</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+
+    </style>
+
     <style name="DefaultActionBar" parent="Widget.MaterialComponents.Toolbar.Primary">
         <item name="titleTextAppearance">@style/ActionBarTitle</item>
+        <item name="android:elevation">0dp</item>
     </style>
 
     <style name="ActionBarTitle">

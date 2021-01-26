@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="portrait_bottom_edge_margin">32dp</dimen>
+    <dimen name="portrait_top_edge_margin">48dp</dimen>
+    <dimen name="portrait_text_layout_margin">48dp</dimen>
+    <dimen name="portrait_sections_margin">64dp</dimen>
+
+    <dimen name="landscape_bottom_edge_margin">16dp</dimen>
+
+    <dimen name="side_edge_margin">32dp</dimen>
+    <dimen name="timer_scoreboard_margin">16dp</dimen>
+    <dimen name="winners_list_bottom_margin">32dp</dimen>
+
+    <dimen name="time_picker_top_edge_margin">32dp</dimen>
+    <dimen name="time_picker_separator_margin">16dp</dimen>
+    <dimen name="time_picker_side_edge_margin">16dp</dimen>
+    <dimen name="time_picker_bottom_edge_margin">16dp</dimen>
+    <dimen name="time_picker_sections_margin">32dp</dimen>
+    <dimen name="time_picker_title_horizontal_padding">48dp</dimen>
+    <dimen name="time_picker_title_vertical_padding">16dp</dimen>
+
+    <dimen name="winner_item_horizontal_padding">16dp</dimen>
+    <dimen name="winner_item_vertical_padding">12dp</dimen>
+
+    <dimen name="timer_preview_drawable_padding">8dp</dimen>
+
+    <dimen name="game_scoreboard_text_size">48sp</dimen>
+    <dimen name="result_scoreboard_text_size">36sp</dimen>
+    <dimen name="timer_preview_text_size">36sp</dimen>
+</resources>

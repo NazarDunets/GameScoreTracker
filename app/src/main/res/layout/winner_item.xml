@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingHorizontal="16dp"
-    android:paddingVertical="12dp">
+    android:paddingHorizontal="@dimen/winner_item_horizontal_padding"
+    android:paddingVertical="@dimen/winner_item_vertical_padding">
 
     <TextView
         android:id="@+id/tvWinnerName"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_weight="1"
-        tools:text="Spartak" />
+        tools:text="TEAMONE" />
 
     <TextView
         android:id="@+id/tvWinnerScore"

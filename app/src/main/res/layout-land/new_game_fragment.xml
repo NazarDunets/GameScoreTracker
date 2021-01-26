@@ -11,7 +11,7 @@
         style="@style/DefaultButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="@dimen/side_edge_margin"
         android:text="@string/go_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,36 +19,29 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tfTeam1"
-        style="@style/DefaultInputText"
+        style="@style/DefaultInputTextLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="@dimen/side_edge_margin"
         android:hint="@string/team1_hint"
-        app:counterEnabled="true"
-        app:counterMaxLength="12"
         app:layout_constraintBottom_toTopOf="@+id/tfTeam2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTeam1"
+            style="@style/TeamEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="12"
-            android:maxLength="12"
-            android:maxLines="1"
-            android:singleLine="true" />
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tfTeam2"
-        style="@style/DefaultInputText"
+        style="@style/DefaultInputTextLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/team2_hint"
-        app:counterEnabled="true"
-        app:counterMaxLength="12"
         app:layout_constraintBottom_toTopOf="@+id/tvSetTimer"
         app:layout_constraintEnd_toEndOf="@+id/tfTeam1"
         app:layout_constraintStart_toStartOf="@+id/tfTeam1"
@@ -56,12 +49,9 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTeam2"
+            style="@style/TeamEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="12"
-            android:maxLength="12"
-            android:maxLines="1"
-            android:singleLine="true" />
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,10 +59,10 @@
         android:id="@+id/tvSetTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawablePadding="8dp"
+        android:drawablePadding="@dimen/timer_preview_drawable_padding"
         android:gravity="center_vertical"
         android:textColor="@color/black"
-        android:textSize="36sp"
+        android:textSize="@dimen/timer_preview_text_size"
         app:drawableStartCompat="@drawable/ic_stopwatch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tfTeam1"
@@ -84,13 +74,13 @@
         android:id="@+id/ibLeaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:background="#0000"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_trophy"
         app:layout_constraintEnd_toEndOf="@+id/tvGo"
         app:layout_constraintStart_toStartOf="@+id/tvGo"
-        app:layout_constraintTop_toBottomOf="@+id/tvGo" />
+        app:layout_constraintTop_toBottomOf="@+id/tvGo"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
